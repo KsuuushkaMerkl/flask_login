@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 1.2rem;
+            background-color: #e7ecfa;
+            color: #521E7B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Авторизация</h1>
+        <div id="form-container"></div>
+    </main>
+
+    <script>
+        fetch('/get/login/content')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('form-container').innerHTML = html;
+            });
+    </script>
+</body>
+</html>
